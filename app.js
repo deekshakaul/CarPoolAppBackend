@@ -20,9 +20,7 @@ var logURL=function (req,res,next){
     app.use(logURL);
 
 
-    app.get('/', function (req, res) {
-      res.send('hello world')
-    })
+app.use("/", router);
 
 app.all('*', function(req, res, next) {
   var err = new Error();
@@ -38,3 +36,5 @@ app.use(function(err, req, res, next) {
 
 app.listen(3000);
 console.log("server running");
+
+module.exports = app;
